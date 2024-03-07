@@ -9,7 +9,6 @@ describe("API launch", () => {
   beforeAll(async () => {
     await mongooseConnection();
     await loadPlanetData();
-    await closeMongooseConnection()
   });
 
   describe("POST api test for /launches", () => {
