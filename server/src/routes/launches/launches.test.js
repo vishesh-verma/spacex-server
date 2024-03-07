@@ -10,7 +10,9 @@ describe("API launch", () => {
     await mongooseConnection();
     await loadPlanetData();
   });
-
+  afterAll(async()=>{
+    await closeMongooseConnection();
+  })
   describe("POST api test for /launches", () => {
     const launchDate = new Date();
 
