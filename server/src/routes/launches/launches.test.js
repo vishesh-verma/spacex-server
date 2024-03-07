@@ -1,14 +1,16 @@
 const request = require("supertest");
 const app = require("../../app");
-const {mongooseConnection,closeMongooseConnection} = require("../../../services/mongo");
-const { getAllPlanets} = require('../../models/planets.model')
+const {
+  mongooseConnection,
+  closeMongooseConnection,
+} = require("../../../services/mongo");
+const { loadPlanetData } = require("../../models/planets.model");
 describe("API launch", () => {
   beforeAll(async () => {
     await mongooseConnection();
-    await getAllPlanets();
+    await loadPlanetData();
   });
 
-  
   describe("POST api test for /launches", () => {
     const launchDate = new Date();
 
