@@ -3,7 +3,7 @@ const http = require("http");
 const { loadPlanetData } = require("./models/planets.model");
 const { loadLaunchData } = require("./models/launches.model");
 const app = require("./app");
-const mongooseConnection = require("../services/mongo");
+const { mongooseConnection }= require("../services/mongo");
 const PORT = process.env.PORT || 8000;
 const server = http.createServer(app);
 

@@ -9,7 +9,13 @@ mongoose.connection.once("error", (err) => {
 });
 
 async function mongooseConnection(){
-  await mongoose.connect(MONGO_URL)
+  return await mongoose.connect(MONGO_URL)
 }
+async function closeMongooseConnection(){
+   return  await mongoose.connection.close()
+  }
 
-module.exports = mongooseConnection
+module.exports = {
+    mongooseConnection,
+    closeMongooseConnection
+}
