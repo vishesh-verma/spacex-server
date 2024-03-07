@@ -12,7 +12,7 @@ async function mongooseConnection(){
   return await mongoose.connect(MONGO_URL)
 }
 async function closeMongooseConnection(){
-   return  await mongoose.connection.close()
+   return  await mongoose.disconnect()
   }
 
 module.exports = {
