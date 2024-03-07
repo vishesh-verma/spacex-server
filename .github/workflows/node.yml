@@ -8,10 +8,12 @@ jobs:
   build:
     env: 
       CI: true
+      MONGO_URL: mongodb://localhost:27017/test_database
     strategy: 
       matrix:
         node-version: ['20.x']
         mongodb-version: ['4.2', '4.4', '5.0', '6.0']
+        
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
