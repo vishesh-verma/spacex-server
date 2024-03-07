@@ -1,0 +1,7 @@
+# folders
+/public
+/node_modules
+
+#environments secrets
+.env
+.DS_Store
